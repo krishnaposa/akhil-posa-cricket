@@ -69,25 +69,10 @@ export const journey = [
  */
 export const gallery = [
   {
-    src: publicUrl('gallery/akhil-4.jpg'),
-    alt: 'Akhil Posa — bowling action, Param Veers',
-  },
-  {
-    src: publicUrl('gallery/akhil-9.jpg'),
-    alt: 'Akhil Posa — delivery stride',
-  },
-  {
     src: publicUrl('gallery/akhil-5.jpg'),
     alt: 'Akhil Posa — Minor League Cricket, Atlanta Lightning',
   },
-  {
-    src: publicUrl('gallery/akhil-1.PNG'),
-    alt: 'Akhil Posa — Atlanta Lightning, Minor League Cricket',
-  },
-  {
-    src: publicUrl('gallery/akhil-13.jpg'),
-    alt: 'Akhil Posa — on the field',
-  },
+
   {
     src: publicUrl('gallery/akhil-2.jpg'),
     alt: 'Akhil Posa — Starlings, full kit on the field',

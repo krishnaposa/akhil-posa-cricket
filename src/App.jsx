@@ -84,7 +84,7 @@ export default function App() {
         <div className="header-bar">
           <a className="brand" href="#top" onClick={closeNav}>
             <span className="brand-mark" aria-hidden />
-            <span className="brand-text">{site.team}</span>
+            <span className="brand-text">{site.name}</span>
           </a>
           <button
             type="button"
@@ -304,7 +304,7 @@ export default function App() {
       <footer className="site-footer" data-reveal>
         <div className="footer-inner">
           <p>
-            <strong>{site.name}</strong> · {site.team}
+            <strong>{site.name}</strong>
           </p>
           <ul className="footer-social">
             {site.social.instagram && (
@@ -328,7 +328,7 @@ export default function App() {
               </li>
             )}
           </ul>
-          <p className="footer-note">Built with React & Vite · Deploy on GitHub Pages</p>
+          <p className="footer-note">Built by TekMatrix LLC</p>
         </div>
       </footer>
     </div>
