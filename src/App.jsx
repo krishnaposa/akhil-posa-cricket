@@ -126,7 +126,11 @@ export default function App() {
           >
             {site.heroImages?.length ? (
               site.heroImages.map((img, i) => (
-                <div key={img.src} className="hero-strip-cell">
+                <div
+                  key={img.src}
+                  className="hero-strip-cell"
+                  tabIndex={0}
+                >
                   <div className="hero-strip-cell-inner">
                     <img
                       className="hero-photo"
