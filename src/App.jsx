@@ -117,13 +117,6 @@ export default function App() {
 
       <main id="top">
         <section className="hero">
-          <div className="hero-inner">
-            <p className="eyebrow">{site.team} · {site.role}</p>
-            <h1 className="sr-only">{site.name}</h1>
-            {site.tagline ? <p className="hero-tagline">{site.tagline}</p> : null}
-            {site.ageNote ? <p className="hero-meta">{site.ageNote}</p> : null}
-            {site.heroSubtext ? <p className="hero-sub">{site.heroSubtext}</p> : null}
-          </div>
           <div
             className={
               site.heroImages?.length
