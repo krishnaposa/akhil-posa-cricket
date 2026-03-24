@@ -11,52 +11,35 @@ export function publicUrl(path) {
 
 export const site = {
   name: 'Akhil Posa',
-  tagline: 'Professional cricket — and a coaching lane built on the same standards',
+  tagline: '',
   team: 'Lighting',
   role: 'Professional cricketer',
-  ageNote: '22 — living the journey he started as a kid',
-  heroSubtext:
-    'This site backs two goals: stay visible for the next step in elite cricket — bigger leagues and the right assignments — and grow a coaching offer that passes on what he’s learned in the nets and on the field.',
+  ageNote: '',
+  heroSubtext: '',
   social: {
     instagram: '', // e.g. 'https://instagram.com/yourhandle'
     youtube: '',
     x: '',
   },
   contactEmail: '', // optional — used for coaching enquiries and footer
-  /** Shown in the hero and listed in Photos — path under public/ */
-  heroImage: publicUrl('gallery/akhil-1.PNG'),
-  heroImageAlt: 'Akhil Posa — professional cricketer',
+  /** Hero image strip (left → right). Nav uses `team` so the name isn’t repeated in the header. */
+  heroImages: [
+    { src: publicUrl('gallery/akhil-1.PNG'), alt: 'Akhil — Atlanta Lightning, Minor League Cricket' },
+    { src: publicUrl('gallery/akhil-4.jpg'), alt: 'Akhil — on the field' },
+    { src: publicUrl('gallery/akhil-9.jpg'), alt: 'Akhil — delivery stride' },
+  ],
 }
-
-/** Two strategic priorities — league / career track and coaching business */
-export const objectives = [
-  {
-    id: 'elite',
-    eyebrow: 'Career & visibility',
-    title: 'Project Akhil — next assignments, bigger league',
-    body:
-      'Positioning for the right opportunities: domestic and franchise cricket, trials, and roles that match his game. The focus is clear performance, a professional profile sponsors and selectors can trust, and a path toward top-tier cricket.',
-  },
-  {
-    id: 'coaching',
-    eyebrow: 'Coaching & growth',
-    title: 'Market the coaching side',
-    body:
-      'Structured coaching for players who want technical clarity, match habits, and confidence — juniors through to serious club cricketers. Sessions are built from the same discipline that drives his own career.',
-  },
-]
 
 /** Dedicated coaching marketing block — CTA uses site.contactEmail when set */
 export const coaching = {
-  headline: 'Coaching with Akhil',
-  intro:
-    'Train with someone who lives the professional schedule: technical work, tactical awareness, and the mental side of performing under pressure. Ideal for individuals and small groups who want accountable, cricket-first coaching.',
+  headline: 'Coaching',
+  intro: 'Technical work, match habits, and the mental side of performing under pressure — for individuals and small groups.',
   highlights: [
-    'Batting and game-awareness — plans that translate to match day',
-    'Bowling workloads and skills — aligned to age and ambition',
-    'Fielding intensity and standards — the details that win close games',
+    'Batting and game awareness',
+    'Bowling workloads and skills',
+    'Fielding standards',
   ],
-  note: 'Sessions can be tailored after a short conversation about level, goals, and availability.',
+  note: 'Tell us your level and goals — sessions are tailored from there.',
   ctaLabel: 'Ask about coaching',
 }
 
@@ -79,7 +62,9 @@ export const journey = [
 ]
 
 /**
- * Gallery — jpg/jpeg/png. groupFocus: scroll-triggered zoom toward Akhil (focusX/focusY = % for transform-origin).
+ * Gallery — jpg/jpeg/png.
+ * groupFocus: scroll-zoom toward Akhil. Each group/duo shot needs its own focusX, focusY (CSS % for
+ * transform-origin — left/top of image = 0%, bottom/right = 100%) and zoom; tune per photo.
  * wide: spans two columns on larger screens.
  */
 export const gallery = [
@@ -100,6 +85,10 @@ export const gallery = [
     alt: 'Akhil Posa — Atlanta Lightning, Minor League Cricket',
   },
   {
+    src: publicUrl('gallery/akhil-13.jpg'),
+    alt: 'Akhil Posa — on the field',
+  },
+  {
     src: publicUrl('gallery/akhil-2.jpg'),
     alt: 'Akhil Posa — Starlings, full kit on the field',
   },
@@ -107,56 +96,56 @@ export const gallery = [
     src: publicUrl('gallery/akhil-6.jpg'),
     alt: 'Starlings — team photo',
     groupFocus: true,
-    focusX: '56%',
-    focusY: '30%',
+    focusX: '58%',
+    focusY: '28%',
     zoom: 1.4,
   },
   {
     src: publicUrl('gallery/akhil-3.jpg'),
     alt: 'Atlanta Cricket Academy Avatars — team photo',
     groupFocus: true,
-    focusX: '50%',
-    focusY: '91%',
+    focusX: '51%',
+    focusY: '93%',
     zoom: 1.42,
   },
   {
     src: publicUrl('gallery/akhil-8.jpg'),
     alt: 'Atlanta Cricket Academy Avatars — team photo',
     groupFocus: true,
-    focusX: '50%',
-    focusY: '88%',
-    zoom: 1.4,
+    focusX: '47%',
+    focusY: '84%',
+    zoom: 1.39,
   },
   {
     src: publicUrl('gallery/akhil-7.JPG'),
     alt: 'Atlanta Avatars — team and coaches',
     groupFocus: true,
-    focusX: '32%',
-    focusY: '86%',
+    focusX: '30%',
+    focusY: '82%',
     zoom: 1.38,
   },
   {
     src: publicUrl('gallery/akhil-10.JPG'),
     alt: 'Team photo — match day',
     groupFocus: true,
-    focusX: '14%',
-    focusY: '76%',
+    focusX: '16%',
+    focusY: '78%',
     zoom: 1.45,
   },
   {
     src: publicUrl('gallery/akhil-11.JPG'),
     alt: 'Akhil with a teammate — cricket whites',
     groupFocus: true,
-    focusX: '74%',
-    focusY: '46%',
+    focusX: '76%',
+    focusY: '44%',
     zoom: 1.35,
   },
   {
     src: publicUrl('gallery/akhil-12.jpeg'),
     alt: 'Trophy celebration — team photo, Minor League Cricket',
     groupFocus: true,
-    focusX: '48%',
-    focusY: '72%',
+    focusX: '45%',
+    focusY: '69%',
     zoom: 1.36,
     wide: true,
   },

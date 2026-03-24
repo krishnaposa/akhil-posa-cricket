@@ -1,7 +1,6 @@
 import { useEffect, useState, useCallback } from 'react'
 import {
   site,
-  objectives,
   coaching,
   journey,
   gallery,
@@ -85,7 +84,7 @@ export default function App() {
         <div className="header-bar">
           <a className="brand" href="#top" onClick={closeNav}>
             <span className="brand-mark" aria-hidden />
-            <span className="brand-text">{site.name}</span>
+            <span className="brand-text">{site.team}</span>
           </a>
           <button
             type="button"
@@ -108,11 +107,10 @@ export default function App() {
           className={`nav ${navOpen ? 'is-open' : ''}`}
           aria-label="Primary"
         >
-          <NavLink href="#focus" onNavigate={closeNav}>Focus</NavLink>
-          <NavLink href="#coaching" onNavigate={closeNav}>Coaching</NavLink>
-          <NavLink href="#journey" onNavigate={closeNav}>Journey</NavLink>
           <NavLink href="#gallery" onNavigate={closeNav}>Photos</NavLink>
           <NavLink href="#videos" onNavigate={closeNav}>Videos</NavLink>
+          <NavLink href="#journey" onNavigate={closeNav}>Journey</NavLink>
+          <NavLink href="#coaching" onNavigate={closeNav}>Coaching</NavLink>
           <NavLink href="#sponsors" onNavigate={closeNav}>Sponsors</NavLink>
         </nav>
       </header>
@@ -121,31 +119,32 @@ export default function App() {
         <section className="hero">
           <div className="hero-inner">
             <p className="eyebrow">{site.team} · {site.role}</p>
-            <h1 className="hero-title">
-              <span className="hero-title-line">{site.name}</span>
-            </h1>
-            <p className="hero-tagline">{site.tagline}</p>
-            <p className="hero-meta">{site.ageNote}</p>
-            <p className="hero-sub">{site.heroSubtext}</p>
-            <div className="hero-actions">
-              <a className="btn btn-primary" href="#focus">Career & goals</a>
-              <a className="btn btn-ghost" href="#coaching">Coaching</a>
-            </div>
+            <h1 className="sr-only">{site.name}</h1>
+            {site.tagline ? <p className="hero-tagline">{site.tagline}</p> : null}
+            {site.ageNote ? <p className="hero-meta">{site.ageNote}</p> : null}
+            {site.heroSubtext ? <p className="hero-sub">{site.heroSubtext}</p> : null}
           </div>
           <div
-            className={site.heroImage ? 'hero-visual hero-visual--photo' : 'hero-visual'}
-            aria-hidden={!site.heroImage}
+            className={
+              site.heroImages?.length
+                ? 'hero-visual hero-visual--strip'
+                : 'hero-visual'
+            }
           >
-            {site.heroImage ? (
-              <img
-                className="hero-photo"
-                src={site.heroImage}
-                alt={site.heroImageAlt}
-                width={640}
-                height={800}
-                decoding="async"
-                fetchPriority="high"
-              />
+            {site.heroImages?.length ? (
+              site.heroImages.map((img, i) => (
+                <div key={img.src} className="hero-strip-cell">
+                  <img
+                    className="hero-photo"
+                    src={img.src}
+                    alt={img.alt}
+                    width={320}
+                    height={400}
+                    decoding="async"
+                    fetchPriority={i === 0 ? 'high' : 'auto'}
+                  />
+                </div>
+              ))
             ) : (
               <>
                 <div className="hero-glow hero-glow-a" />
@@ -161,76 +160,10 @@ export default function App() {
           </div>
         </section>
 
-        <section id="focus" className="section section-alt" data-reveal>
-          <div className="section-head">
-            <h2 className="section-title">Two focus areas</h2>
-            <p>
-              Everything on this site supports elite cricket progression and a coaching brand that stands on real playing experience.
-            </p>
-          </div>
-          <ul className="focus-grid">
-            {objectives.map((o) => (
-              <li key={o.id} className="focus-card">
-                <p className="focus-eyebrow">{o.eyebrow}</p>
-                <h3>{o.title}</h3>
-                <p className="focus-body">{o.body}</p>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section id="coaching" className="section" data-reveal>
-          <div className="section-head">
-            <h2 className="section-title">{coaching.headline}</h2>
-            <p>{coaching.intro}</p>
-          </div>
-          <div className="coaching-panel">
-            <ul className="coaching-highlights">
-              {coaching.highlights.map((line) => (
-                <li key={line}>{line}</li>
-              ))}
-            </ul>
-            <p className="coaching-note">{coaching.note}</p>
-            <div className="coaching-actions">
-              {site.contactEmail ? (
-                <a
-                  className="btn btn-primary"
-                  href={`mailto:${site.contactEmail}?subject=${encodeURIComponent('Coaching enquiry — Akhil Posa')}`}
-                >
-                  {coaching.ctaLabel}
-                </a>
-              ) : (
-                <p className="coaching-email-hint">
-                  Set <code>contactEmail</code> in <code>src/content.js</code> to enable the coaching enquiry button.
-                </p>
-              )}
-            </div>
-          </div>
-        </section>
-
-        <section id="journey" className="section section-timeline" data-reveal>
-          <div className="section-head">
-            <h2 className="section-title">The journey</h2>
-            <p>Kid with a dream → 22-year-old professional. Every chapter built in the nets.</p>
-          </div>
-          <ol className="timeline">
-            {journey.map((item) => (
-              <li key={item.title} className="timeline-item">
-                <span className="timeline-year">{item.year}</span>
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
-              </li>
-            ))}
-          </ol>
-        </section>
-
         <section id="gallery" className="section" data-reveal>
           <div className="section-head">
             <h2 className="section-title">Photos</h2>
-            <p>
-              Action shots and portraits first, then team moments. Group photos gently zoom toward Akhil when they scroll into view — focal points are tuned in{' '}
-              <code>src/content.js</code>.
-            </p>
+            <p>On the field, in the squad, and in the nets.</p>
           </div>
           <ul className="gallery-grid">
             {gallery.map((img) => {
@@ -274,7 +207,7 @@ export default function App() {
         <section id="videos" className="section section-alt" data-reveal>
           <div className="section-head">
             <h2 className="section-title">Videos</h2>
-            <p>Embed YouTube highlights or uploads — set each <code>youtubeId</code> in <code>src/content.js</code>.</p>
+            <p>Highlights and clips.</p>
           </div>
           <div className="video-grid">
             {videos.map((v) => (
@@ -304,10 +237,55 @@ export default function App() {
           </div>
         </section>
 
+        <section id="journey" className="section section-timeline" data-reveal>
+          <div className="section-head">
+            <h2 className="section-title">The journey</h2>
+            <p>Kid with a dream → 22-year-old professional. Every chapter built in the nets.</p>
+          </div>
+          <ol className="timeline">
+            {journey.map((item) => (
+              <li key={item.title} className="timeline-item">
+                <span className="timeline-year">{item.year}</span>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <section id="coaching" className="section section-alt" data-reveal>
+          <div className="section-head">
+            <h2 className="section-title">{coaching.headline}</h2>
+            <p>{coaching.intro}</p>
+          </div>
+          <div className="coaching-panel">
+            <ul className="coaching-highlights">
+              {coaching.highlights.map((line) => (
+                <li key={line}>{line}</li>
+              ))}
+            </ul>
+            <p className="coaching-note">{coaching.note}</p>
+            <div className="coaching-actions">
+              {site.contactEmail ? (
+                <a
+                  className="btn btn-primary"
+                  href={`mailto:${site.contactEmail}?subject=${encodeURIComponent('Coaching enquiry — Akhil Posa')}`}
+                >
+                  {coaching.ctaLabel}
+                </a>
+              ) : (
+                <p className="coaching-email-hint">
+                  Set <code>contactEmail</code> in <code>src/content.js</code> to enable the coaching enquiry button.
+                </p>
+              )}
+            </div>
+          </div>
+        </section>
+
         <section id="sponsors" className="section" data-reveal>
           <div className="section-head">
             <h2 className="section-title">Sponsors & partners</h2>
-            <p>Space for the brands and people who make the journey possible.</p>
+            <p>Thank you to everyone who backs the journey.</p>
           </div>
           <ul className="sponsor-grid">
             {sponsors.map((s) => (
