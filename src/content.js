@@ -1,7 +1,13 @@
 /**
  * Edit this file to update copy, timeline, media URLs, and sponsors.
- * Drop images into public/gallery/ and reference as /gallery/your-file.jpg
+ * Drop images into public/gallery/ and pass paths to publicUrl(), e.g. publicUrl('gallery/photo.jpg').
+ * Required for GitHub Pages project sites (VITE_BASE=/repo-name/).
  */
+export function publicUrl(path) {
+  const base = import.meta.env.BASE_URL
+  const normalized = path.replace(/^\/+/, '')
+  return `${base}${normalized}`
+}
 
 export const site = {
   name: 'Akhil Posa',
@@ -18,7 +24,7 @@ export const site = {
   },
   contactEmail: '', // optional — used for coaching enquiries and footer
   /** Shown in the hero and listed in Photos — path under public/ */
-  heroImage: '/gallery/akhil-1.PNG',
+  heroImage: publicUrl('gallery/akhil-1.PNG'),
   heroImageAlt: 'Akhil Posa — professional cricketer',
 }
 
@@ -78,27 +84,27 @@ export const journey = [
  */
 export const gallery = [
   {
-    src: '/gallery/akhil-4.jpg',
+    src: publicUrl('gallery/akhil-4.jpg'),
     alt: 'Akhil Posa — bowling action, Param Veers',
   },
   {
-    src: '/gallery/akhil-9.jpg',
+    src: publicUrl('gallery/akhil-9.jpg'),
     alt: 'Akhil Posa — delivery stride',
   },
   {
-    src: '/gallery/akhil-5.jpg',
+    src: publicUrl('gallery/akhil-5.jpg'),
     alt: 'Akhil Posa — Minor League Cricket, Atlanta Lightning',
   },
   {
-    src: '/gallery/akhil-1.PNG',
+    src: publicUrl('gallery/akhil-1.PNG'),
     alt: 'Akhil Posa — Atlanta Lightning, Minor League Cricket',
   },
   {
-    src: '/gallery/akhil-2.jpg',
+    src: publicUrl('gallery/akhil-2.jpg'),
     alt: 'Akhil Posa — Starlings, full kit on the field',
   },
   {
-    src: '/gallery/akhil-6.jpg',
+    src: publicUrl('gallery/akhil-6.jpg'),
     alt: 'Starlings — team photo',
     groupFocus: true,
     focusX: '56%',
@@ -106,7 +112,7 @@ export const gallery = [
     zoom: 1.4,
   },
   {
-    src: '/gallery/akhil-3.jpg',
+    src: publicUrl('gallery/akhil-3.jpg'),
     alt: 'Atlanta Cricket Academy Avatars — team photo',
     groupFocus: true,
     focusX: '50%',
@@ -114,7 +120,7 @@ export const gallery = [
     zoom: 1.42,
   },
   {
-    src: '/gallery/akhil-8.jpg',
+    src: publicUrl('gallery/akhil-8.jpg'),
     alt: 'Atlanta Cricket Academy Avatars — team photo',
     groupFocus: true,
     focusX: '50%',
@@ -122,7 +128,7 @@ export const gallery = [
     zoom: 1.4,
   },
   {
-    src: '/gallery/akhil-7.JPG',
+    src: publicUrl('gallery/akhil-7.JPG'),
     alt: 'Atlanta Avatars — team and coaches',
     groupFocus: true,
     focusX: '32%',
@@ -130,7 +136,7 @@ export const gallery = [
     zoom: 1.38,
   },
   {
-    src: '/gallery/akhil-10.JPG',
+    src: publicUrl('gallery/akhil-10.JPG'),
     alt: 'Team photo — match day',
     groupFocus: true,
     focusX: '14%',
@@ -138,7 +144,7 @@ export const gallery = [
     zoom: 1.45,
   },
   {
-    src: '/gallery/akhil-11.JPG',
+    src: publicUrl('gallery/akhil-11.JPG'),
     alt: 'Akhil with a teammate — cricket whites',
     groupFocus: true,
     focusX: '74%',
@@ -146,7 +152,7 @@ export const gallery = [
     zoom: 1.35,
   },
   {
-    src: '/gallery/akhil-12.jpeg',
+    src: publicUrl('gallery/akhil-12.jpeg'),
     alt: 'Trophy celebration — team photo, Minor League Cricket',
     groupFocus: true,
     focusX: '48%',
@@ -180,14 +186,14 @@ export const sponsors = [
     name: 'Your sponsor',
     tier: 'Title partner',
     url: '',
-    logo: '/sponsors/placeholder.svg',
+    logo: publicUrl('sponsors/placeholder.svg'),
     blurb: 'Thank you to everyone who backs the journey — add real sponsor copy and logos in public/sponsors/.',
   },
   {
     name: 'Equipment / local partner',
     tier: 'Supporting partner',
     url: '',
-    logo: '/sponsors/placeholder.svg',
+    logo: publicUrl('sponsors/placeholder.svg'),
     blurb: 'Swap these blocks for real brands and links.',
   },
 ]
