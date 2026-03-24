@@ -1,5 +1,13 @@
 import { useEffect, useState, useCallback } from 'react'
-import { site, journey, gallery, videos, sponsors } from './content.js'
+import {
+  site,
+  objectives,
+  coaching,
+  journey,
+  gallery,
+  videos,
+  sponsors,
+} from './content.js'
 
 function NavLink({ href, children, onNavigate }) {
   return (
@@ -82,6 +90,8 @@ export default function App() {
           className={`nav ${navOpen ? 'is-open' : ''}`}
           aria-label="Primary"
         >
+          <NavLink href="#focus" onNavigate={closeNav}>Focus</NavLink>
+          <NavLink href="#coaching" onNavigate={closeNav}>Coaching</NavLink>
           <NavLink href="#journey" onNavigate={closeNav}>Journey</NavLink>
           <NavLink href="#gallery" onNavigate={closeNav}>Photos</NavLink>
           <NavLink href="#videos" onNavigate={closeNav}>Videos</NavLink>
@@ -100,18 +110,82 @@ export default function App() {
             <p className="hero-meta">{site.ageNote}</p>
             <p className="hero-sub">{site.heroSubtext}</p>
             <div className="hero-actions">
-              <a className="btn btn-primary" href="#gallery">View gallery</a>
-              <a className="btn btn-ghost" href="#journey">Read the journey</a>
+              <a className="btn btn-primary" href="#focus">Career & goals</a>
+              <a className="btn btn-ghost" href="#coaching">Coaching</a>
             </div>
           </div>
-          <div className="hero-visual" aria-hidden>
-            <div className="hero-glow hero-glow-a" />
-            <div className="hero-glow hero-glow-b" />
-            <div className="pitch-strip" />
-            <div className="stadium-ring" />
-            <div className="ball-orbit">
-              <span className="cricket-ball" />
-              <span className="ball-trail" />
+          <div
+            className={site.heroImage ? 'hero-visual hero-visual--photo' : 'hero-visual'}
+            aria-hidden={!site.heroImage}
+          >
+            {site.heroImage ? (
+              <img
+                className="hero-photo"
+                src={site.heroImage}
+                alt={site.heroImageAlt}
+                width={640}
+                height={800}
+                decoding="async"
+                fetchPriority="high"
+              />
+            ) : (
+              <>
+                <div className="hero-glow hero-glow-a" />
+                <div className="hero-glow hero-glow-b" />
+                <div className="pitch-strip" />
+                <div className="stadium-ring" />
+                <div className="ball-orbit">
+                  <span className="cricket-ball" />
+                  <span className="ball-trail" />
+                </div>
+              </>
+            )}
+          </div>
+        </section>
+
+        <section id="focus" className="section section-alt" data-reveal>
+          <div className="section-head">
+            <h2 className="section-title">Two focus areas</h2>
+            <p>
+              Everything on this site supports elite cricket progression and a coaching brand that stands on real playing experience.
+            </p>
+          </div>
+          <ul className="focus-grid">
+            {objectives.map((o) => (
+              <li key={o.id} className="focus-card">
+                <p className="focus-eyebrow">{o.eyebrow}</p>
+                <h3>{o.title}</h3>
+                <p className="focus-body">{o.body}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section id="coaching" className="section" data-reveal>
+          <div className="section-head">
+            <h2 className="section-title">{coaching.headline}</h2>
+            <p>{coaching.intro}</p>
+          </div>
+          <div className="coaching-panel">
+            <ul className="coaching-highlights">
+              {coaching.highlights.map((line) => (
+                <li key={line}>{line}</li>
+              ))}
+            </ul>
+            <p className="coaching-note">{coaching.note}</p>
+            <div className="coaching-actions">
+              {site.contactEmail ? (
+                <a
+                  className="btn btn-primary"
+                  href={`mailto:${site.contactEmail}?subject=${encodeURIComponent('Coaching enquiry — Akhil Posa')}`}
+                >
+                  {coaching.ctaLabel}
+                </a>
+              ) : (
+                <p className="coaching-email-hint">
+                  Set <code>contactEmail</code> in <code>src/content.js</code> to enable the coaching enquiry button.
+                </p>
+              )}
             </div>
           </div>
         </section>

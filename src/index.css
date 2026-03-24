@@ -585,6 +585,32 @@ main {
     0 0 0 1px rgba(255, 255, 255, 0.06) inset;
 }
 
+.hero-visual--photo {
+  min-height: 0;
+  padding: 0;
+  background: var(--bg-panel);
+  aspect-ratio: 3 / 4;
+  max-height: min(520px, 78vh);
+  width: 100%;
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+@media (min-width: 880px) {
+  .hero-visual--photo {
+    margin-inline: 0;
+    max-width: none;
+  }
+}
+
+.hero-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
 .hero-glow {
   position: absolute;
   border-radius: 50%;
@@ -779,6 +805,107 @@ main {
 
 .section-timeline {
   border-top: 1px solid rgba(232, 197, 71, 0.2);
+}
+
+.focus-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .focus-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.focus-card {
+  padding: 1.5rem 1.35rem;
+  background: linear-gradient(155deg, rgba(15, 24, 18, 0.98), rgba(22, 38, 28, 0.72));
+  border-radius: var(--radius);
+  border: 1px solid rgba(74, 222, 128, 0.22);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.28);
+  transition:
+    transform 0.35s var(--ease-out),
+    border-color 0.35s;
+}
+
+.focus-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(232, 197, 71, 0.38);
+}
+
+.focus-eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-cool);
+}
+
+.focus-card h3 {
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.focus-body {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  font-weight: 500;
+}
+
+.coaching-panel {
+  padding: 1.5rem 1.35rem;
+  max-width: 720px;
+  background: linear-gradient(160deg, rgba(15, 24, 18, 0.95), rgba(22, 38, 28, 0.55));
+  border-radius: var(--radius);
+  border: 1px solid rgba(232, 197, 71, 0.28);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.coaching-highlights {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.coaching-highlights li {
+  margin-bottom: 0.5rem;
+}
+
+.coaching-highlights li:last-child {
+  margin-bottom: 0;
+}
+
+.coaching-note {
+  margin: 0 0 1.25rem;
+  color: var(--text-muted);
+  font-size: 0.96rem;
+  font-weight: 500;
+}
+
+.coaching-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.coaching-email-hint {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  font-weight: 600;
 }
 
 .timeline {
