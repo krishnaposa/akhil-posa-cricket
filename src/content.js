@@ -72,12 +72,88 @@ export const journey = [
   },
 ]
 
-/** Gallery — add files under public/gallery/ */
+/**
+ * Gallery — jpg/jpeg/png. groupFocus: scroll-triggered zoom toward Akhil (focusX/focusY = % for transform-origin).
+ * wide: spans two columns on larger screens.
+ */
 export const gallery = [
-  { src: '/gallery/akhil-1.PNG', alt: 'Akhil Posa — on the field' },
-  { src: '/gallery/placeholder-1.svg', alt: 'Akhil Posa — youth cricket (add your photo)' },
-  { src: '/gallery/placeholder-2.svg', alt: 'Training and nets (add your photo)' },
-  { src: '/gallery/placeholder-3.svg', alt: 'Match day — Lighting (add your photo)' },
+  {
+    src: '/gallery/akhil-4.jpg',
+    alt: 'Akhil Posa — bowling action, Param Veers',
+  },
+  {
+    src: '/gallery/akhil-9.jpg',
+    alt: 'Akhil Posa — delivery stride',
+  },
+  {
+    src: '/gallery/akhil-5.jpg',
+    alt: 'Akhil Posa — Minor League Cricket, Atlanta Lightning',
+  },
+  {
+    src: '/gallery/akhil-1.PNG',
+    alt: 'Akhil Posa — Atlanta Lightning, Minor League Cricket',
+  },
+  {
+    src: '/gallery/akhil-2.jpg',
+    alt: 'Akhil Posa — Starlings, full kit on the field',
+  },
+  {
+    src: '/gallery/akhil-6.jpg',
+    alt: 'Starlings — team photo',
+    groupFocus: true,
+    focusX: '56%',
+    focusY: '30%',
+    zoom: 1.4,
+  },
+  {
+    src: '/gallery/akhil-3.jpg',
+    alt: 'Atlanta Cricket Academy Avatars — team photo',
+    groupFocus: true,
+    focusX: '50%',
+    focusY: '91%',
+    zoom: 1.42,
+  },
+  {
+    src: '/gallery/akhil-8.jpg',
+    alt: 'Atlanta Cricket Academy Avatars — team photo',
+    groupFocus: true,
+    focusX: '50%',
+    focusY: '88%',
+    zoom: 1.4,
+  },
+  {
+    src: '/gallery/akhil-7.JPG',
+    alt: 'Atlanta Avatars — team and coaches',
+    groupFocus: true,
+    focusX: '32%',
+    focusY: '86%',
+    zoom: 1.38,
+  },
+  {
+    src: '/gallery/akhil-10.JPG',
+    alt: 'Team photo — match day',
+    groupFocus: true,
+    focusX: '14%',
+    focusY: '76%',
+    zoom: 1.45,
+  },
+  {
+    src: '/gallery/akhil-11.JPG',
+    alt: 'Akhil with a teammate — cricket whites',
+    groupFocus: true,
+    focusX: '74%',
+    focusY: '46%',
+    zoom: 1.35,
+  },
+  {
+    src: '/gallery/akhil-12.jpeg',
+    alt: 'Trophy celebration — team photo, Minor League Cricket',
+    groupFocus: true,
+    focusX: '48%',
+    focusY: '72%',
+    zoom: 1.36,
+    wide: true,
+  },
 ]
 
 /**

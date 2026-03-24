@@ -60,6 +60,24 @@ export default function App() {
     return () => obs.disconnect()
   }, [])
 
+  useEffect(() => {
+    const cards = document.querySelectorAll('[data-gallery-group]')
+    if (!cards.length) return
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('gallery-card--played')
+            obs.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.22, rootMargin: '0px 0px -12% 0px' },
+    )
+    cards.forEach((el) => obs.observe(el))
+    return () => obs.disconnect()
+  }, [])
+
   return (
     <div className="page">
       <div className="bg-aurora" aria-hidden />
@@ -209,17 +227,47 @@ export default function App() {
         <section id="gallery" className="section" data-reveal>
           <div className="section-head">
             <h2 className="section-title">Photos</h2>
-            <p>Moments on the field, with teammates, and behind the scenes — add your images to <code>public/gallery/</code>.</p>
+            <p>
+              Action shots and portraits first, then team moments. Group photos gently zoom toward Akhil when they scroll into view — focal points are tuned in{' '}
+              <code>src/content.js</code>.
+            </p>
           </div>
           <ul className="gallery-grid">
-            {gallery.map((img) => (
-              <li key={img.src} className="gallery-card">
-                <div className="gallery-card-inner">
-                  <img src={img.src} alt={img.alt} loading="lazy" width={640} height={400} />
-                  <div className="gallery-shine" aria-hidden />
-                </div>
-              </li>
-            ))}
+            {gallery.map((img) => {
+              const isGroup = Boolean(img.groupFocus)
+              const imgStyle = isGroup
+                ? {
+                    '--focus-x': img.focusX ?? '50%',
+                    '--focus-y': img.focusY ?? '50%',
+                    '--zoom-end': img.zoom ?? 1.38,
+                  }
+                : undefined
+              return (
+                <li
+                  key={img.src}
+                  className={`gallery-card${isGroup ? ' gallery-card--group' : ''}${img.wide ? ' gallery-card--wide' : ''}`}
+                  {...(isGroup ? { 'data-gallery-group': 'true' } : {})}
+                >
+                  <div className="gallery-card-inner">
+                    <div
+                      className={`gallery-img-wrap${isGroup ? ' gallery-img-wrap--focus' : ''}`}
+                    >
+                      <img
+                        className={isGroup ? 'gallery-img gallery-img--focus' : 'gallery-img'}
+                        src={img.src}
+                        alt={img.alt}
+                        loading="lazy"
+                        decoding="async"
+                        width={640}
+                        height={400}
+                        style={imgStyle}
+                      />
+                    </div>
+                    <div className="gallery-shine" aria-hidden />
+                  </div>
+                </li>
+              )
+            })}
           </ul>
         </section>
 

@@ -976,6 +976,12 @@ main {
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
 }
 
+@media (min-width: 700px) {
+  .gallery-card--wide {
+    grid-column: span 2;
+  }
+}
+
 .gallery-card {
   border-radius: var(--radius);
   overflow: hidden;
@@ -997,17 +1003,43 @@ main {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
 }
 
-.gallery-card img {
+.gallery-img-wrap {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--bg-elevated);
+}
+
+.gallery-img {
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 10;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.6s var(--ease-out);
 }
 
-.gallery-card:hover img {
+.gallery-card:not(.gallery-card--group):hover .gallery-img {
   transform: scale(1.06);
+}
+
+.gallery-img--focus {
+  transform-origin: var(--focus-x, 50%) var(--focus-y, 50%);
+  transform: scale(1);
+  will-change: transform;
+}
+
+.gallery-card--played .gallery-img-wrap--focus .gallery-img--focus {
+  animation: gallery-focus-zoom 9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes gallery-focus-zoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(var(--zoom-end, 1.38));
+  }
 }
 
 .gallery-shine {
@@ -1029,10 +1061,21 @@ main {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .gallery-card:hover .gallery-card-inner,
-  .gallery-card:hover img,
-  .gallery-shine {
+  .gallery-card:not(.gallery-card--group):hover .gallery-card-inner {
     transform: none;
+  }
+
+  .gallery-card:not(.gallery-card--group):hover .gallery-img {
+    transform: none;
+  }
+
+  .gallery-card--played .gallery-img-wrap--focus .gallery-img--focus {
+    animation: none;
+    transform: scale(var(--zoom-end, 1.28));
+  }
+
+  .gallery-shine {
+    transform: none !important;
     transition: none;
   }
 }
