@@ -27,6 +27,7 @@ export const site = {
     { src: publicUrl('gallery/akhil-1.PNG'), alt: 'Akhil — Atlanta Lightning, Minor League Cricket' },
     { src: publicUrl('gallery/akhil-4.jpg'), alt: 'Akhil — on the field' },
     { src: publicUrl('gallery/akhil-9.jpg'), alt: 'Akhil — delivery stride' },
+    { src: publicUrl('gallery/akhil-2.jpg'), alt: 'Akhil — batting pose' },
   ],
 }
 
@@ -71,11 +72,6 @@ export const gallery = [
   {
     src: publicUrl('gallery/akhil-5.jpg'),
     alt: 'Akhil Posa — Minor League Cricket, Atlanta Lightning',
-  },
-
-  {
-    src: publicUrl('gallery/akhil-2.jpg'),
-    alt: 'Akhil Posa — Starlings, full kit on the field',
   },
   {
     src: publicUrl('gallery/akhil-6.jpg'),
@@ -123,7 +119,7 @@ export const gallery = [
     groupFocus: true,
     focusX: '76%',
     focusY: '44%',
-    zoom: 1.35,
+    zoom: 1.0,
   },
   {
     src: publicUrl('gallery/akhil-12.jpeg'),
