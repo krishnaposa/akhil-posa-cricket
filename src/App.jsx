@@ -127,15 +127,17 @@ export default function App() {
             {site.heroImages?.length ? (
               site.heroImages.map((img, i) => (
                 <div key={img.src} className="hero-strip-cell">
-                  <img
-                    className="hero-photo"
-                    src={img.src}
-                    alt={img.alt}
-                    width={320}
-                    height={400}
-                    decoding="async"
-                    fetchPriority={i === 0 ? 'high' : 'auto'}
-                  />
+                  <div className="hero-strip-cell-inner">
+                    <img
+                      className="hero-photo"
+                      src={img.src}
+                      alt={img.alt}
+                      width={480}
+                      height={560}
+                      decoding="async"
+                      fetchPriority={i === 0 ? 'high' : 'auto'}
+                    />
+                  </div>
                 </div>
               ))
             ) : (

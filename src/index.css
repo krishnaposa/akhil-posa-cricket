@@ -433,9 +433,7 @@ main {
 
 @media (min-width: 880px) {
   .hero {
-    grid-template-columns: 1.05fr 0.95fr;
-    padding: 3rem 1.5rem 4.5rem;
-    gap: 2.5rem;
+    padding: 2rem 1.5rem 3.5rem;
   }
 }
 
@@ -586,43 +584,117 @@ main {
 }
 
 .hero-visual--strip {
+  --hero-strip-h: clamp(360px, 68vh, 680px);
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  gap: 0.35rem;
-  min-height: 220px;
-  max-height: min(440px, 58vh);
+  gap: 0.5rem;
   width: 100%;
-  max-width: 520px;
+  max-width: min(1040px, 100%);
+  height: var(--hero-strip-h);
+  min-height: var(--hero-strip-h);
   margin-inline: auto;
   padding: 0;
   background: var(--bg-panel);
 }
 
-@media (min-width: 880px) {
-  .hero-visual--strip {
-    margin-inline: 0;
-    max-width: none;
-    max-height: min(500px, 72vh);
-  }
-}
-
 .hero-strip-cell {
   flex: 1 1 0;
   min-width: 0;
+  min-height: 0;
   overflow: hidden;
-  border-radius: 12px;
-  border: 1px solid rgba(232, 197, 71, 0.22);
+  border-radius: 14px;
+  border: 1px solid rgba(232, 197, 71, 0.28);
   background: var(--bg-elevated);
+  opacity: 0;
+  animation: hero-strip-enter 0.95s var(--ease-out) forwards;
 }
 
-.hero-photo {
-  display: block;
+.hero-strip-cell:nth-child(1) {
+  animation-delay: 0.06s;
+}
+
+.hero-strip-cell:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.hero-strip-cell:nth-child(3) {
+  animation-delay: 0.34s;
+}
+
+.hero-strip-cell:nth-child(n + 4) {
+  animation-delay: 0.48s;
+}
+
+@keyframes hero-strip-enter {
+  from {
+    opacity: 0;
+    transform: translateX(36px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-strip-cell-inner {
+  position: relative;
   width: 100%;
   height: 100%;
-  min-height: 200px;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.hero-visual--strip .hero-photo {
+  display: block;
+  width: 118%;
+  max-width: none;
+  height: 100%;
+  min-height: 100%;
   object-fit: cover;
   object-position: center center;
+  animation: hero-photo-slide 20s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.hero-visual--strip .hero-strip-cell:nth-child(1) .hero-photo {
+  animation-delay: 0s;
+}
+
+.hero-visual--strip .hero-strip-cell:nth-child(2) .hero-photo {
+  animation-delay: -3.5s;
+}
+
+.hero-visual--strip .hero-strip-cell:nth-child(3) .hero-photo {
+  animation-delay: -7s;
+}
+
+.hero-visual--strip .hero-strip-cell:nth-child(n + 4) .hero-photo {
+  animation-delay: -4s;
+}
+
+@keyframes hero-photo-slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-14%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-strip-cell {
+    opacity: 1;
+    animation: none;
+  }
+
+  .hero-visual--strip .hero-photo {
+    width: 100%;
+    animation: none;
+    transform: none;
+  }
 }
 
 .hero-glow {
