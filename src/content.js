@@ -21,7 +21,7 @@ export const site = {
     youtube: '',
     x: '',
   },
-  contactEmail: '', // optional — used for coaching enquiries and footer
+  contactEmail: 'akhilposa@gmail.com', // optional — used for coaching enquiries and footer
   /** Hero image strip (left → right). Nav uses `team` so the name isn’t repeated in the header. */
   heroImages: [
     { src: publicUrl('gallery/akhil-1.PNG'), alt: 'Akhil — Atlanta Lightning, Minor League Cricket' },

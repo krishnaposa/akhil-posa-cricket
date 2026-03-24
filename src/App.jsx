@@ -162,7 +162,6 @@ export default function App() {
         <section id="gallery" className="section" data-reveal>
           <div className="section-head">
             <h2 className="section-title">Photos</h2>
-            <p>On the field, in the squad, and in the nets.</p>
           </div>
           <ul className="gallery-grid">
             {gallery.map((img) => {
@@ -206,7 +205,6 @@ export default function App() {
         <section id="videos" className="section section-alt" data-reveal>
           <div className="section-head">
             <h2 className="section-title">Videos</h2>
-            <p>Highlights and clips.</p>
           </div>
           <div className="video-grid">
             {videos.map((v) => (
@@ -229,7 +227,6 @@ export default function App() {
                     </div>
                   )}
                 </div>
-                <h3>{v.title}</h3>
                 <p>{v.caption}</p>
               </article>
             ))}
@@ -239,17 +236,7 @@ export default function App() {
         <section id="journey" className="section section-timeline" data-reveal>
           <div className="section-head">
             <h2 className="section-title">The journey</h2>
-            <p>Kid with a dream → 22-year-old professional. Every chapter built in the nets.</p>
           </div>
-          <ol className="timeline">
-            {journey.map((item) => (
-              <li key={item.title} className="timeline-item">
-                <span className="timeline-year">{item.year}</span>
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
-              </li>
-            ))}
-          </ol>
         </section>
 
         <section id="coaching" className="section section-alt" data-reveal>
@@ -284,7 +271,6 @@ export default function App() {
         <section id="sponsors" className="section" data-reveal>
           <div className="section-head">
             <h2 className="section-title">Sponsors & partners</h2>
-            <p>Thank you to everyone who backs the journey.</p>
           </div>
           <ul className="sponsor-grid">
             {sponsors.map((s) => (
