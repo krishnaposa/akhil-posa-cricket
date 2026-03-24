@@ -1,0 +1,5 @@
+# Rename this file to `CNAME` (no extension) and set your domain on one line, e.g.:
+# www.akhilposa.com
+#
+# GitHub: Repo → Settings → Pages → Custom domain (same hostname).
+# Add the DNS records GitHub shows (often A/AAAA for apex, or CNAME for www).
