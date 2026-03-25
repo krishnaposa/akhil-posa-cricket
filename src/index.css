@@ -12,6 +12,8 @@
   --glow-gold: rgba(232, 197, 71, 0.55);
   --font-display: 'Archivo Black', system-ui, sans-serif;
   --font-body: 'Outfit', system-ui, sans-serif;
+  /* Section headings: Barlow reads clearly smaller than Archivo Black */
+  --font-section: 'Barlow', system-ui, sans-serif;
   --radius: 16px;
   --radius-pill: 999px;
   --header-offset: calc(env(safe-area-inset-top, 0px) + 58px);
@@ -841,10 +843,11 @@ main {
 
 .section-title {
   margin: 0 0 0.5rem;
-  font-family: var(--font-display);
-  font-size: clamp(2.25rem, 6vw, 3.25rem);
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  font-family: var(--font-section);
+  font-weight: 800;
+  font-size: clamp(1.35rem, 3.2vw, 1.75rem);
+  letter-spacing: 0.04em;
+  line-height: 1.22;
   background: linear-gradient(90deg, var(--text) 0%, var(--accent) 100%);
   -webkit-background-clip: text;
   background-clip: text;
