@@ -59,24 +59,6 @@ export default function App() {
     return () => obs.disconnect()
   }, [])
 
-  useEffect(() => {
-    const cards = document.querySelectorAll('[data-gallery-group]')
-    if (!cards.length) return
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('gallery-card--played')
-            obs.unobserve(entry.target)
-          }
-        })
-      },
-      { threshold: 0.22, rootMargin: '0px 0px -12% 0px' },
-    )
-    cards.forEach((el) => obs.observe(el))
-    return () => obs.disconnect()
-  }, [])
-
   return (
     <div className="page">
       <div className="bg-aurora" aria-hidden />
@@ -165,8 +147,8 @@ export default function App() {
           </div>
           <ul className="gallery-grid">
             {gallery.map((img) => {
-              const isGroup = Boolean(img.groupFocus)
-              const imgStyle = isGroup
+              const hoverZoom = Boolean(img.groupFocus)
+              const wrapStyle = hoverZoom
                 ? {
                     '--focus-x': img.focusX ?? '50%',
                     '--focus-y': img.focusY ?? '50%',
@@ -176,22 +158,21 @@ export default function App() {
               return (
                 <li
                   key={img.src}
-                  className={`gallery-card${isGroup ? ' gallery-card--group' : ''}${img.wide ? ' gallery-card--wide' : ''}`}
-                  {...(isGroup ? { 'data-gallery-group': 'true' } : {})}
+                  className={`gallery-card${img.wide ? ' gallery-card--wide' : ''}`}
                 >
                   <div className="gallery-card-inner">
                     <div
-                      className={`gallery-img-wrap${isGroup ? ' gallery-img-wrap--focus' : ''}`}
+                      className={`gallery-img-wrap${hoverZoom ? ' gallery-img-wrap--zoom-hover' : ''}`}
+                      style={wrapStyle}
                     >
                       <img
-                        className={isGroup ? 'gallery-img gallery-img--focus' : 'gallery-img'}
+                        className="gallery-img"
                         src={img.src}
                         alt={img.alt}
                         loading="lazy"
                         decoding="async"
                         width={640}
                         height={400}
-                        style={imgStyle}
                       />
                     </div>
                     <div className="gallery-shine" aria-hidden />

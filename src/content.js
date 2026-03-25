@@ -64,8 +64,7 @@ export const journey = [
 
 /**
  * Gallery — jpg/jpeg/png.
- * groupFocus: scroll-zoom toward Akhil. Each group/duo shot needs its own focusX, focusY (CSS % for
- * transform-origin — left/top of image = 0%, bottom/right = 100%) and zoom; tune per photo.
+ * groupFocus: hover zoom toward a point (focusX/focusY as %, zoom as scale). No effect until pointer is over the photo.
  * wide: spans two columns on larger screens.
  */
 export const gallery = [
