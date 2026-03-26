@@ -46,19 +46,17 @@ export const coaching = {
 
 export const journey = [
   {
-    year: 'Early years',
-    title: 'First love for the game',
-    body: 'Picking up a bat as a kid, learning the basics, and falling in love with cricket — club nets, school matches, and endless practice.',
+    src: publicUrl('gallery/akhil-5.jpg'),
+    alt: 'Akhil Posa — Minor League Cricket, Atlanta Lightning',
   },
   {
-    year: 'Teenage years',
-    title: 'Sharpening the craft',
-    body: 'Competitive youth cricket, longer sessions in the nets, and learning to read match situations — the bridge between talent and discipline.',
-  },
-  {
-    year: 'Today',
-    title: 'Professional with Lighting',
-    body: 'Representing the Lighting team as a 22-year-old professional — carrying the same joy from childhood into every innings and every spell.',
+    src: publicUrl('gallery/akhil-6.jpg'),
+    alt: 'Starlings — team photo',
+    groupFocus: true,
+    focusX: '58%',
+    focusY: '10%',
+    zoom: 2.5,
+    title: 'Title',
   },
 ]
 
@@ -67,14 +65,26 @@ export const journey = [
  * groupFocus: hover zoom toward a point (focusX/focusY as %, zoom as scale). No effect until pointer is over the photo.
  * wide: spans two columns on larger screens.
  */
-export const gallery = [
+export const teams = [
   {
-    src: publicUrl('gallery/akhil-5.jpg'),
-    alt: 'Akhil Posa — Minor League Cricket, Atlanta Lightning',
+    src: publicUrl('gallery/with_team3.jpg'),
+    alt: 'My team',
+    groupFocus: true,
+    focusX: '58%',
+    focusY: '10%',
+    zoom: 2.5,
   },
   {
-    src: publicUrl('gallery/akhil-6.jpg'),
-    alt: 'Starlings — team photo',
+    src: publicUrl('gallery/with_team2.jpg'),
+    alt: 'My team',
+    groupFocus: true,
+    focusX: '58%',
+    focusY: '10%',
+    zoom: 2.5,
+  },
+  {
+    src: publicUrl('gallery/akhil-7.jpg'),
+    alt: 'My team',
     groupFocus: true,
     focusX: '58%',
     focusY: '10%',
@@ -89,8 +99,8 @@ export const gallery = [
     zoom: 2.0,
   },
   {
-    src: publicUrl('gallery/akhil-8.jpg'),
-    alt: 'Atlanta Cricket Academy Avatars — team photo',
+    src: publicUrl('gallery/akhil-6.jpg'),
+    alt: 'team photo',
     groupFocus: true,
     focusX: '47%',
     focusY: '84%',
@@ -113,16 +123,16 @@ export const gallery = [
     zoom: 2.5,
   },
   {
-    src: publicUrl('gallery/akhil-11.JPG'),
-    alt: 'Akhil with a teammate — cricket whites',
+    src: publicUrl('gallery/akhil-12.JPG'),
+    alt: 'Akhil with a teammate',
     groupFocus: true,
     focusX: '76%',
     focusY: '44%',
     zoom: 1.0,
   },
   {
-    src: publicUrl('gallery/akhil-12.jpeg'),
-    alt: 'Trophy celebration — team photo, Minor League Cricket',
+    src: publicUrl('gallery/with-team.jpeg'),
+    alt: 'team',
     groupFocus: true,
     focusX: '45%',
     focusY: '55%',

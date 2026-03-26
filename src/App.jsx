@@ -118,11 +118,13 @@ export default function App() {
                       className="hero-photo"
                       src={img.src}
                       alt={img.alt}
+                      title={img.alt}
                       width={480}
                       height={560}
                       decoding="async"
                       fetchPriority={i === 0 ? 'high' : 'auto'}
                     />
+                    
                   </div>
                 </div>
               ))
@@ -143,10 +145,10 @@ export default function App() {
 
         <section id="gallery" className="section" data-reveal>
           <div className="section-head">
-            <h2 className="section-title">Photos</h2>
+            <h2 className="section-title">Teams</h2>
           </div>
           <ul className="gallery-grid">
-            {gallery.map((img) => {
+            {teams.map((img) => {
               const hoverZoom = Boolean(img.groupFocus)
               const wrapStyle = hoverZoom
                 ? {
@@ -155,6 +157,9 @@ export default function App() {
                     '--zoom-end': img.zoom ?? 1.38,
                   }
                 : undefined
+              const captionText = img.title
+              const caption =
+                typeof captionText === 'string' ? captionText.trim() : ''
               return (
                 <li
                   key={img.src}
@@ -169,12 +174,69 @@ export default function App() {
                         className="gallery-img"
                         src={img.src}
                         alt={img.alt}
+                        title={img.alt}
                         loading="lazy"
                         decoding="async"
                         width={640}
                         height={400}
                       />
                     </div>
+                    {caption.length > 0 ? (
+                      <span className="gallery-hover-title" aria-hidden>
+                        {caption}
+                      </span>
+                    ) : null}
+                    {caption.length > 0 ? <p className="gallery-caption">{caption}</p> : null}
+                    <div className="gallery-shine" aria-hidden />
+                  </div>
+                </li>
+              )
+            })}
+          </ul>
+        </section>
+        <section id="journey" className="section section-timeline" data-reveal>
+          <div className="section-head">
+            <h2 className="section-title">The journey</h2>
+          </div>
+          <ul className="gallery-grid">
+            {journey.map((img) => {
+              const hoverZoom = Boolean(img.groupFocus)
+              const wrapStyle = hoverZoom
+                ? {
+                    '--focus-x': img.focusX ?? '50%',
+                    '--focus-y': img.focusY ?? '50%',
+                    '--zoom-end': img.zoom ?? 1.38,
+                  }
+                : undefined
+              const captionText = img.title 
+              const caption =
+                typeof captionText === 'string' ? captionText.trim() : ''
+              return (
+                <li
+                  key={img.src}
+                  className={`gallery-card${img.wide ? ' gallery-card--wide' : ''}`}
+                >
+                  <div className="gallery-card-inner">
+                    <div
+                      className={`gallery-img-wrap${hoverZoom ? ' gallery-img-wrap--zoom-hover' : ''}`}
+                      style={wrapStyle}
+                    >
+                      <img
+                        className="gallery-img"
+                        src={img.src}
+                        alt={img.alt}
+                        title={img.alt}
+                        loading="lazy"
+                        decoding="async"
+                        width={640}
+                        height={400}
+                      />
+                    </div>
+                    {caption.length > 0 ? (
+                      <span className="gallery-hover-title" aria-hidden>
+                        {caption}
+                      </span>
+                    ) : null}
                     <div className="gallery-shine" aria-hidden />
                   </div>
                 </li>
@@ -214,11 +276,6 @@ export default function App() {
           </div>
         </section>
 
-        <section id="journey" className="section section-timeline" data-reveal>
-          <div className="section-head">
-            <h2 className="section-title">The journey</h2>
-          </div>
-        </section>
 
         <section id="coaching" className="section section-alt" data-reveal>
           <div className="section-head">
