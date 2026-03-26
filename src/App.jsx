@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from 'react'
 import {
   site,
   coaching,
-  journey,
+  gigs,
   teams,
   videos,
   sponsors,
@@ -89,9 +89,9 @@ export default function App() {
           className={`nav ${navOpen ? 'is-open' : ''}`}
           aria-label="Primary"
         >
-          <NavLink href="#gallery" onNavigate={closeNav}>Photos</NavLink>
+          <NavLink href="#teams" onNavigate={closeNav}>Teams</NavLink>
+          <NavLink href="#gigs" onNavigate={closeNav}>Gigs</NavLink>
           <NavLink href="#videos" onNavigate={closeNav}>Videos</NavLink>
-          <NavLink href="#journey" onNavigate={closeNav}>Journey</NavLink>
           <NavLink href="#coaching" onNavigate={closeNav}>Coaching</NavLink>
           <NavLink href="#sponsors" onNavigate={closeNav}>Sponsors</NavLink>
         </nav>
@@ -143,7 +143,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="gallery" className="section" data-reveal>
+        <section id="teams" className="section" data-reveal>
           <div className="section-head">
             <h2 className="section-title">Teams</h2>
           </div>
@@ -194,12 +194,12 @@ export default function App() {
             })}
           </ul>
         </section>
-        <section id="journey" className="section section-timeline" data-reveal>
+        <section id="gigs" className="section section-timeline" data-reveal>
           <div className="section-head">
             <h2 className="section-title">The journey</h2>
           </div>
           <ul className="gallery-grid">
-            {journey.map((img) => {
+            {gigs.map((img) => {
               const hoverZoom = Boolean(img.groupFocus)
               const wrapStyle = hoverZoom
                 ? {
