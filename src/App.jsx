@@ -3,7 +3,7 @@ import {
   site,
   coaching,
   journey,
-  gallery,
+  teams,
   videos,
   sponsors,
 } from './content.js'
