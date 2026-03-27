@@ -268,10 +268,16 @@ export const with_players = [
 
 
 /**
- * YouTube embeds: video ID from watch?v=ID or youtube.com/shorts/ID
+ * Videos: use `youtubeId` for YouTube embeds (ID from watch?v=ID or shorts URL),
+ * or `src` with publicUrl('gallery/file.mp4') for a local file in public/gallery/.
  * format: 'short' uses a vertical 9:16 frame (best for Shorts).
  */
 export const videos = [
+  {
+    title: 'With weights',
+    caption: 'Training clip — with weights.',
+    src: publicUrl('gallery/with-weights.mp4'),
+  },
   {
     title: 'YouTube Short',
     caption: 'Moment from the journey — on the field in vertical format.',

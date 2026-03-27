@@ -301,7 +301,10 @@ export default function App() {
           </div>
           <div className="video-grid">
             {videos.map((v) => (
-              <article key={v.title} className="video-card">
+              <article
+                key={v.youtubeId || v.src || v.title}
+                className="video-card"
+              >
                 <div
                   className={
                     v.format === 'short' ? 'video-frame video-frame--short' : 'video-frame'
@@ -313,6 +316,15 @@ export default function App() {
                       src={`https://www.youtube-nocookie.com/embed/${v.youtubeId}`}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
+                    />
+                  ) : v.src ? (
+                    <video
+                      title={v.title}
+                      className="video-file"
+                      controls
+                      playsInline
+                      preload="metadata"
+                      src={v.src}
                     />
                   ) : (
                     <div className="video-placeholder">
