@@ -212,6 +212,61 @@ export const gigs = [
   },
 ]
 
+export const with_players = [
+  {
+    src: publicUrl('gallery/with_player18.PNG'),
+  },
+  {
+    src: publicUrl('gallery/with_player17.jpg'),
+  },
+  {
+    src: publicUrl('gallery/with_player13.PNG'),
+  },
+  {
+    src: publicUrl('gallery/with_player11.jpeg'),
+  },
+    {
+    src: publicUrl('gallery/with_player10.jpeg'),
+  },
+  {
+    src: publicUrl('gallery/with_player9.jpeg'),
+  },
+    {
+    src: publicUrl('gallery/with_player8.jpeg'),
+  },
+  {
+    src: publicUrl('gallery/with_player7.jpeg'),
+  },
+  {
+    src: publicUrl('gallery/with_player6.jpeg'),
+  },
+  {
+    src: publicUrl('gallery/with_player5.jpeg'),
+  },
+  {
+    src: publicUrl('gallery/with_player4.jpg'),
+  },
+  {
+    src: publicUrl('gallery/with_player-4.jpeg'),
+  },
+  {
+    src: publicUrl('gallery/with_player3.png'),
+  },
+  {
+    src: publicUrl('gallery/with_player2.png'),
+  },
+  {
+    src: publicUrl('gallery/with_player1.png'),
+  },
+  {
+    src: publicUrl('gallery/with_player16.PNG'),
+  },
+  {
+    src: publicUrl('gallery/with_player15.PNG'),
+  },
+]
+
+
 /**
  * YouTube embeds: video ID from watch?v=ID or youtube.com/shorts/ID
  * format: 'short' uses a vertical 9:16 frame (best for Shorts).
