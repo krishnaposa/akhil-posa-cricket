@@ -300,17 +300,17 @@ export const videos = [
 
 export const sponsors = [
   {
-    name: 'Your sponsor',
-    tier: 'Title partner',
-    url: '',
-    logo: publicUrl('sponsors/placeholder.svg'),
-    blurb: 'Thank you to everyone who backs the journey — add real sponsor copy and logos in public/sponsors/.',
+    name: 'BKK Cricket Gear - BKKIND',
+    tier: 'BKK Cricket Gear',
+    url: 'https://bkkcricketgear.com/',
+    logo: publicUrl('sponsors/sponsor-1.jpeg'),
+    blurb: 'Thank you to everyone who backs the journey — Please support by checking out BKK Cricket Gear.',
   },
   {
-    name: 'Equipment / local partner',
-    tier: 'Supporting partner',
-    url: '',
-    logo: publicUrl('sponsors/placeholder.svg'),
-    blurb: 'Swap these blocks for real brands and links.',
+    name: 'The Urban Indian - TUI',
+    tier: 'The Urban Indian',
+    url: 'https://www.tuibrand.com/collections/all?gad_source=1&gad_campaignid=23252376921&gbraid=0AAAAA_UMIdBKgVuYHmNKLpUCmG-c7CvHs&gclid=Cj0KCQjwkYLPBhC3ARIsAIyHi3RhOth5I7kYiEOjO30UdKnx1VvBfpjpQ9Qc5rA6Bc6ZTCIRCCVyZBQaAkDoEALw_wcB',
+    logo: publicUrl('sponsors/sponsor-2.jpeg'),
+    blurb: 'Thank you to everyone who backs the journey — Please support by checking out The Urban Indian.',
   },
 ]
