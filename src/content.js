@@ -303,14 +303,14 @@ export const sponsors = [
     name: 'BKK Cricket Gear - BKKIND',
     tier: 'BKK Cricket Gear',
     url: 'https://bkkcricketgear.com/',
-    logo: publicUrl('sponsors/sponsor-1.jpeg'),
+    logo: publicUrl('sponsors/bkk-collage.jpg'),
     blurb: 'Thank you to everyone who backs the journey — Please support by checking out BKK Cricket Gear.',
   },
   {
     name: 'The Urban Indian - TUI',
     tier: 'The Urban Indian',
     url: 'https://www.tuibrand.com/collections/all?gad_source=1&gad_campaignid=23252376921&gbraid=0AAAAA_UMIdBKgVuYHmNKLpUCmG-c7CvHs&gclid=Cj0KCQjwkYLPBhC3ARIsAIyHi3RhOth5I7kYiEOjO30UdKnx1VvBfpjpQ9Qc5rA6Bc6ZTCIRCCVyZBQaAkDoEALw_wcB',
-    logo: publicUrl('sponsors/sponsor-2.jpeg'),
+    logo: publicUrl('sponsors/tui-collage.jpg'),
     blurb: 'Thank you to everyone who backs the journey — Please support by checking out The Urban Indian.',
   },
 ]
