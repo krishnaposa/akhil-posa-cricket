@@ -286,8 +286,14 @@ export const videos = [
   },
   {
     title: 'YouTube Short',
-    caption: 'Another highlight clip — rename these titles in content.js anytime.',
+    caption: 'Another highlight clip.',
     youtubeId: 'hujmRlAb5Zo',
+    format: 'short',
+  },
+  {
+    title: 'Akhil Bowling',
+    caption: 'Another highlight clip — rename these titles in content.js anytime.',
+    youtubeId: 'lE59nN6msys',
     format: 'short',
   },
 ]
