@@ -35,7 +35,8 @@ jobs:
           elif [[ "$name" == *.github.io ]]; then
             echo "path=/" >> "$GITHUB_OUTPUT"
           else
-            echo "path=/$name/" >> "$GITHUB_OUTPUT"
+            # Relative base: same build works at github.io/repo/ and custom domain root.
+            echo "path=./" >> "$GITHUB_OUTPUT"
           fi
 
       - run: npm ci
