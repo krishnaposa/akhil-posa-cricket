@@ -376,7 +376,7 @@ export default function App() {
             {sponsors.map((s) => (
               <li key={s.name} className="sponsor-card">
                 <div className="sponsor-logo-wrap">
-                  <img src={s.logo} alt="" width={120} height={48} />
+                  <img src={s.logo} alt="" width={200} height={80} />
                 </div>
                 <p className="sponsor-tier">{s.tier}</p>
                 {s.url ? (
