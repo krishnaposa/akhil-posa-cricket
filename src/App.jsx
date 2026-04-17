@@ -303,7 +303,11 @@ export default function App() {
             {videos.map((v) => (
               <article
                 key={v.youtubeId || v.src || v.title}
-                className="video-card"
+                className={
+                  v.format === 'short'
+                    ? 'video-card video-card--short'
+                    : 'video-card video-card--wide'
+                }
               >
                 <div
                   className={
