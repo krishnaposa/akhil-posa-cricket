@@ -53,6 +53,22 @@ export const coaching = {
  */
 export const teams = [
   {
+    src: publicUrl('gallery/superkings.JPG'),
+    alt: 'Super Kings',
+    groupFocus: true,
+    focusX: '58%',
+    focusY: '10%',
+    zoom: 2.5,
+  },
+  {
+    src: publicUrl('gallery/regalrally.JPG'),
+    alt: 'Regal Rally',
+    groupFocus: true,
+    focusX: '58%',
+    focusY: '10%',
+    zoom: 2.5,
+  },
+  {
     src: publicUrl('gallery/with_team3.jpg'),
     alt: 'My team',
     groupFocus: true,
