@@ -1227,16 +1227,14 @@ main {
 }
 
 .sponsor-logo-wrap {
-  height: 88px;
-  display: flex;
-  align-items: center;
+  width: 100%;
   margin-bottom: 0.75rem;
 }
 
 .sponsor-logo-wrap img {
-  max-height: 80px;
-  max-width: 100%;
-  width: auto;
+  display: block;
+  width: 100%;
+  height: auto;
   object-fit: contain;
   filter: brightness(1.15) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
 }
