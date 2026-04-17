@@ -274,11 +274,6 @@ export const with_players = [
  */
 export const videos = [
   {
-    title: 'With weights',
-    caption: 'Training clip — with weights.',
-    src: publicUrl('gallery/with-weights.mp4'),
-  },
-  {
     title: 'YouTube Short',
     caption: 'Moment from the journey — on the field in vertical format.',
     youtubeId: '_0-_8hayAdQ',
@@ -294,6 +289,12 @@ export const videos = [
     title: 'Akhil Bowling',
     caption: 'Another highlight clip — rename these titles in content.js anytime.',
     youtubeId: 'lE59nN6msys',
+    format: 'short',
+  },
+  {
+    title: 'Akhil workout',
+    caption: 'Workout time.',
+    youtubeId: '_xIRg-FuZww',
     format: 'short',
   },
 ]
