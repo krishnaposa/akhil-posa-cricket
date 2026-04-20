@@ -27,7 +27,6 @@ export const site = {
     { src: publicUrl('gallery/akhil-1.PNG'), alt: 'Akhil — Atlanta Lightning, Minor League Cricket' },
     { src: publicUrl('gallery/akhil-4.jpg'), alt: 'Akhil — on the field' },
     { src: publicUrl('gallery/akhil-9.jpg'), alt: 'Akhil — delivery stride' },
-    { src: publicUrl('gallery/akhil-2.jpg'), alt: 'Akhil — batting pose' },
   ],
 }
 
@@ -137,15 +136,6 @@ export const teams = [
 ]
 export const gigs = [
   {
-    src: publicUrl('gallery/baby.JPG'),
-    alt: 'baby',
-    groupFocus: false,
-    focusX: '58%',
-    focusY: '10%',
-    zoom: 2.5,
-    title: 'Being Cute',
-  },
-  {
     src: publicUrl('gallery/activity.JPG'),
     alt: 'Hiking?',
     groupFocus: false,
@@ -153,33 +143,6 @@ export const gigs = [
     focusY: '10%',
     zoom: 2.5,
     title: 'Hiking?',
-  },
-  {
-    src: publicUrl('gallery/with_blitz_pup.jpg'),
-    alt: 'blitz puppy',
-    groupFocus: false,
-    focusX: '58%',
-    focusY: '10%',
-    zoom: 2.5,
-    title: 'Blitz puppy',
-  },
-  {
-    src: publicUrl('gallery/with_blitz_big.jpg'),
-    alt: 'blitz more recent',
-    groupFocus: false,
-    focusX: '58%',
-    focusY: '10%',
-    zoom: 2.5,
-    title: 'Blitz recent',
-  },
-  {
-    src: publicUrl('gallery/gocart.JPG'),
-    alt: 'Gokart',
-    groupFocus: false,
-    focusX: '58%',
-    focusY: '10%',
-    zoom: 2.5,
-    title: 'GoKarting',
   },
   {
     src: publicUrl('gallery/karate.JPG'),
@@ -190,42 +153,7 @@ export const gigs = [
     zoom: 2.5,
     title: 'Karate',
   },
-    {
-    src: publicUrl('gallery/ninja.JPG'),
-    alt: 'Ninja',
-    groupFocus: false,
-    focusX: '58%',
-    focusY: '10%',
-    zoom: 2.5,
-    title: 'Ninja-Halloween',
-  },
-  {
-    src: publicUrl('gallery/debating.JPG'),
-    alt: 'Debating team',
-    groupFocus: false,
-    focusX: '58%',
-    focusY: '10%',
-    zoom: 2.5,
-    title: 'Did some debating',
-  },
-  {
-    src: publicUrl('gallery/travel-1.JPG'),
-    alt: 'Travel',
-    groupFocus: false,
-    focusX: '58%',
-    focusY: '10%',
-    zoom: 2.5,
-    title: 'Did some traveling',
-  },
-  {
-    src: publicUrl('gallery/studies.JPG'),
-    alt: 'Studies',
-    groupFocus: false,
-    focusX: '58%',
-    focusY: '10%',
-    zoom: 2.5,
-    title: 'I guess was okay at some point!',
-  },
+
 ]
 
 export const with_players = [
